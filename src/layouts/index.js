@@ -1,11 +1,13 @@
-import styles from './index.css';
+import styles from './index.scss';
 import Header from './Header/header'
 
 function BasicLayout(props) {
   return (
     <div className={styles.normal}>
       <Header></Header>
-      {props.children}
+      <content>
+        {props.children}
+      </content>
     </div>
   );
 }
