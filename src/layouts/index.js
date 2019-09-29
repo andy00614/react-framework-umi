@@ -5,6 +5,7 @@ function BasicLayout(props) {
   return (
     <div className={styles.normal}>
       <Header></Header>
+      <br/>
       <content>
         {props.children}
       </content>
