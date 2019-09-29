@@ -9,4 +9,18 @@
       margin-left: .5vw;
     }
   }
+  .searchResult {
+    display: flex;
+    // ? 这里如何做到水平居中，但是里面的元素像左对齐
+    // justify-content: center;
+    margin-left: 4vw;
+    flex-wrap: wrap;
+    margin-top: 1vw;
+
+    img {
+      margin: 1vw;
+      width: 180px;
+      height: 180px;
+    }
+  }
 }

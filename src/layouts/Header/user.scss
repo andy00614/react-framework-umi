@@ -1,9 +1,9 @@
 .header {
   display: flex;
-  background-color: #fff; // 一会用这个
+  background-color: #fff;
   box-shadow: 0 2px 8px #f0f1f2;
-  z-index: 10;
-  height: 64px;
+  height: 4vw;
+  flex-shrink: 0;
 }
 
 // %menuSelcted {

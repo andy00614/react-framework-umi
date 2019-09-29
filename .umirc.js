@@ -18,4 +18,11 @@ export default {
       },
     }],
   ],
+  proxy: {
+    "/api": {
+      "target": "http://api.open.weshineapp.com/1.0/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/api" : "" }
+    }
+  }
 }
