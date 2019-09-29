@@ -1,21 +1,9 @@
 import React from 'react'
 import Menu from '../../components/menu' // TODO: 这里设置成alias
 import styles from "./user.scss";
+import { headerMenu as menuList } from '../../config/headerMenu'
 
-function Header(props) {
-
-  const menuList = [
-    {
-      key: 'home',
-      title: '首页'
-    },{
-      key: 'document',
-      title: '文档'
-    },{
-      key: 'blog',
-      title: 'Blog'
-    }
-  ]
+function Header() {
   return (
     <div className={styles.header}>
       <Menu menuList={menuList}/>

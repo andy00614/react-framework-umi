@@ -2,15 +2,16 @@ import React from 'react'
 import styles from './menu.scss'
 import router from 'umi/router';
 
-function Menu({menuList}) {
-  let [targetKey,setTargetKey] = React.useState('home')
   /* 数据结构为
   [{
     key: String,
     value: String，
-    child:[]
+    child:[] 之后如果有下拉层级可以用
   }]
   */
+
+function Menu({menuList}) {
+  let [targetKey,setTargetKey] = React.useState('home')
   const setRouter = (key) => {
     router.push(`/${key}`)
   }
