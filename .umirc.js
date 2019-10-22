@@ -11,12 +11,29 @@ export default {
       title: 'react-framework',
       dll: true,
       
-      routes: {
-        exclude: [
-          /components\//,
-        ],
-      },
+      // routes: {
+      //   exclude: [
+      //     /components\//,
+      //   ],
+      // },
+
     }],
+  ],
+  routes: [
+    // Routes: ['./src/routes/PrivateRoute.js']
+    {
+      path:'/',
+      redirect: '/index/search'
+    },
+    { 
+      path: '/index', 
+      component: '../layouts/index',
+      routes:[
+        { path: '/index/picture', component: './picture',Routes: ['./src/routes/PrivateRoute.js'] },
+        { path: '/index/search', component: './search',Routes: ['./src/routes/PrivateRoute.js'] },
+      ] 
+    },
+    { path: '/login', component: './login' },
   ],
   proxy: {
     "/api": {

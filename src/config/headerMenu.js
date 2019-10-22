@@ -1,9 +1,9 @@
 export const headerMenu = [
   {
-    key: 'search',
+    key: 'index/search',
     title: '输入法表情后台'
   },{
-    key: 'picture',
+    key: 'index/picture',
     title: '皮肤分类后台'
   }
 ]

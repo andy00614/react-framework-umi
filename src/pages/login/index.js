@@ -13,7 +13,7 @@ function Login() {
     const { name:trueName, password:truePassword } = USERINFO
     if(username === trueName && password === truePassword) {
       setLocalStrage(userInfo)
-      router.push('/index')
+      router.push('/index/search')
     } else {
       message.error('请输入正确的账号密码')
     }    
