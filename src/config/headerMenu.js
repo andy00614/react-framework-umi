@@ -1,12 +1,9 @@
 export const headerMenu = [
   {
-    key: 'home',
-    title: '首页'
+    key: 'search',
+    title: '输入法表情后台'
   },{
-    key: 'page2',
-    title: 'Page2'
-  },{
-    key: 'page3',
-    title: 'Page3'
+    key: 'picture',
+    title: '皮肤分类后台'
   }
 ]

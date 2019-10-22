@@ -2,7 +2,6 @@ import React from 'react'
 import MD5 from 'md5.js'
 import { Input, Pagination } from 'antd'
 import styles from './home.scss'
-import { get } from '../../common/api/fetch' // TODO: 请求方法比较常用，目录应该越清晰越好
 
 const { Search } = Input
 const OPENID = '1482924088'
@@ -14,7 +13,7 @@ function SearchImg() {
   let [searchResult,setSearchResult] = React.useState(null)
   let [pageNumber,setPageNumber] = React.useState(1)
 
-  // timestamp: number : 是时间毫秒(new Date().getTime())
+  // timestamp:number -> 是时间毫秒(new Date().getTime())
   const generateSignId = (timestamp) => {
     return `${OPENID}#${SECRET}#${timestamp}`
   }
@@ -24,7 +23,7 @@ function SearchImg() {
     fetch(requestURL).then(res => {
       return res.json()
     }).then(data => {
-      setSearchResult(data)
+      setSearchResult(data) 
     })
   }
 
@@ -39,15 +38,16 @@ function SearchImg() {
     fetchImg(requestURL)
   }
 
-  const pageChange = (current,size) => {
+  const pageChange = (current) => {
     setPageNumber(current)
     requestImg(inputValue,current-1)
   }
 
   const imageLists = (searchResult && searchResult.data) || []
+  const serachedCount = (searchResult && searchResult.pagination && searchResult.pagination.totalCount) || 0
   return (
     <div className={styles.searchContainer}>
-      <h1 className={styles.title}>搜图</h1>
+      <h1 className={styles.title}>输入法表情后台</h1>
       <section>
         <div className={styles.searchBox}>
           <Search 
@@ -58,6 +58,11 @@ function SearchImg() {
           />
         </div>
       </section>
+      {searchResult && <section className={styles.tips}>
+        共搜索出
+        <span className={styles.totalCount}>{serachedCount}</span>
+        条<span>{inputValue ? '相关' : '热门'}</span>结果
+      </section>}
       <section className={styles.searchResult}>
         {
           imageLists.map(item => {

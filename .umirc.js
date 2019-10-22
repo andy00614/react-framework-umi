@@ -23,6 +23,17 @@ export default {
       "target": "http://api.open.weshineapp.com/1.0/",
       "changeOrigin": true,
       "pathRewrite": { "^/api" : "" }
-    }
+    },
+    "/picmarkDemo": {
+      // "target": "http://api.open.weshineapp.com/1.0/",
+      "target": "http://10.216.6.118:9099",
+      "changeOrigin": true,
+      "pathRewrite": { "^/picmarkDemo" : "" }
+    },
+    // "/pic": {
+    //   "target": 'http://10.216.6.118:9099',
+      // "changeOrigin": true,
+      // "pathRewrite": { "^/api" : "" }
+    // }
   }
 }

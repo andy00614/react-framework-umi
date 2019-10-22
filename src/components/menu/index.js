@@ -11,7 +11,7 @@ import router from 'umi/router';
   */
 
 function Menu({menuList}) {
-  let [targetKey,setTargetKey] = React.useState('home')
+  let [targetKey,setTargetKey] = React.useState('search')
   const setRouter = (key) => {
     router.push(`/${key}`)
   }
@@ -20,7 +20,7 @@ function Menu({menuList}) {
       {
         menuList.map(menu => {
           return (
-            <li 
+            <li
               className={menu.key === targetKey ? styles.targetSelect : null} 
               key={menu.key} 
               onClick={() => {
