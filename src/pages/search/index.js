@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import MD5 from 'md5.js'
 import { Input, Pagination } from 'antd'
 import styles from './home.scss'
+import {setUserInStore} from '../../store/actionCreator'
+import { useDispatch } from 'redux-react-hook';
 
 const { Search } = Input
 const OPENID = '1482924088'

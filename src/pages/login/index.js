@@ -4,9 +4,11 @@ import styles from './login.scss'
 import router from 'umi/router';
 import moment from 'moment'
 import { USERINFO } from '../../config/user'
+import { setUserInStore } from '../../store/actionCreator'
+import { useDispatch } from 'redux-react-hook';
 
 function Login() {
-
+  const dispatch = useDispatch()
   const handleLogin = useCallback(() => {
     // 拿到账号密码信息去做校验，如果校验没问题，刷新时间数据
     const { username, password } = userInfo
@@ -14,6 +16,7 @@ function Login() {
     if(username === trueName && password === truePassword) {
       setLocalStrage(userInfo)
       router.push('/index/search')
+      dispatch(setUserInStore(userInfo))
     } else {
       message.error('请输入正确的账号密码')
     }    

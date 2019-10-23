@@ -10,30 +10,19 @@ export default {
       dynamicImport: { webpackChunkName: true },
       title: 'react-framework',
       dll: true,
-      
-      // routes: {
-      //   exclude: [
-      //     /components\//,
-      //   ],
-      // },
-
     }],
   ],
   routes: [
-    // Routes: ['./src/routes/PrivateRoute.js']
-    {
-      path:'/',
-      redirect: '/index/search'
-    },
     { 
-      path: '/index', 
+      path: '/', 
       component: '../layouts/index',
+      exact: false,
       routes:[
-        { path: '/index/picture', component: './picture',Routes: ['./src/routes/PrivateRoute.js'] },
-        { path: '/index/search', component: './search',Routes: ['./src/routes/PrivateRoute.js'] },
+        { path: '/picture', component: './picture' },
+        { path: '/search', component: './search' },
+        { path: '/login', component: './login' },
       ] 
     },
-    { path: '/login', component: './login' },
   ],
   proxy: {
     "/api": {
