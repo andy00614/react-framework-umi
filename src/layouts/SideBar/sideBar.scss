@@ -1,0 +1,22 @@
+.container {
+  width: 13.33vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-shrink: 0;
+  .title {
+    background: black;
+    font-size: 1.04vw;
+    color: #FFFFFF;
+    padding: .9vw 0;
+  }
+  .menuList {
+    flex-grow: 1;
+    :global {
+      .ant-menu-dark {
+        background: #333;
+        height: 100%;
+      }
+    }
+  }
+}
